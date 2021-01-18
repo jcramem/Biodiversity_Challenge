@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="shortcut icon" href="favicon.ico">
+</head>
+
+<body style="background-color:#ced8df;">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center"> 
+        <h1>Belly Button Biodiversity Dashboard</h1>
+      </div>
+    </div>
+    <p style="color:#000000;">
+      Welcome to the interactive dashboard that catalogs the microbes that colonize human navels according to the Belly Button Biodiversity dataset. The following provides the top 10 bacterial species present in volunteer belly buttons, including information on volunteer demographics, washing frequency, and bacteria cultures per sample. Please use the interactive charts below to explore the dataset
+    </p>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Test Subject ID No.:</h5>
+          <!-- <select id="selDataset"></select> -->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">       
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+          <div class="panel-body" style="color:#000000;">Personal information for the volunteer ID chosen above.</div>                
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="bar-plot"></div>
+        <div class="panel-body" style="color:#000000;">Hover over a horizontal bar to display the description and volume of the volunteer’s common bacteria.</div>             
+      </div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
+        <div class="panel-body">The gauge above notes the volunteer's frequency of belly-button washing.</div>              
+      </div>
+    </div>
+    <div class="row" style="background-color:#ced8df;"></div>    
+       <div class="col-md-12" style="height:20px;"></div>    
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+        <div class="panel-body">Note the variety of bacteria present, grouped by type (color) and volume (circle size).</div>            
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="charts.js"></script>
+
+</body>
+
+</html>
+
+
